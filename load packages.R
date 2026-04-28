@@ -2,6 +2,8 @@
 # Sat Mar 21 16:27:03 2026
 #================================================================
 
+options(future.globals.maxSize = +Inf, warn = -1, digits = 5)
+
 #================================================================
 # load R packages
 #================================================================
@@ -20,3 +22,4 @@ if (!require("tidyr"))        { install.packages("tidyr");        library("tidyr
 if (!require("dplyr"))        { install.packages("dplyr");        library("dplyr")        }
 if (!require("scales"))       { install.packages("scales");       library("scales")       }
 if (!require("MASS"))         { install.packages("MASS");         library("MASS")         }
+if (!require("cowplot"))      { install.packages("cowplot");      library("cowplot")      }
