@@ -266,4 +266,4 @@ WFE_emp <- function(X = NULL, x0, gt, k = NULL, Alpha = 1, Beta = 1,
   }
   
   return(invisible(WFE_t))
-}
+                               
