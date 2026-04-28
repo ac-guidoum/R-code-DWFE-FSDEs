@@ -1,5 +1,5 @@
 ##================================================================
-## Fri Apr 10 20:52:00 2026
+## Fri Apr 10 20:51:00 2026
 ##================================================================
 
 ##================================================================
@@ -23,8 +23,8 @@ drift_raw  <- bquote(.(Alpha) * (.(g_k_1) / .(g_k)) * x + .(Beta) * (.(g_k))^.(A
 diff_raw   <- bquote(.(Gamma) * (.(g_k))^.(Alpha))
 drift_simp <- Simplify(drift_raw)
 diff_simp  <- Simplify(diff_raw)
-drift_str  <- deparse(drift_simp)
-diff_str   <- deparse(diff_simp)
+drift_str  <- paste(deparse(drift_simp), collapse = " ")
+diff_str   <- paste(deparse(diff_simp), collapse = " ")
 drift_final <- gsub("\\bx\\b", "X(t)", drift_str)
 diff_final  <- gsub("\\bx\\b", "X(t)", diff_str)
 cat(sprintf("--- Model FSDE ---\ndX(t) = [ %s ] dt + [ %s ] dW(t)^H\n\n",
@@ -36,7 +36,7 @@ cat(sprintf("--- Model FSDE ---\ndX(t) = [ %s ] dt + [ %s ] dW(t)^H\n\n",
 
 T    <- 10
 N    <- 1000
-M    <- 100000
+M    <- 1000
 ncpu <- 12
 bw   <- "nrd0"
 
@@ -250,3 +250,4 @@ plot_WFE <- ggplot() +
   )
 
 plot_WFE
+
