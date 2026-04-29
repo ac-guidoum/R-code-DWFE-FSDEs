@@ -250,5 +250,3 @@ plot_WFE <- ggplot() +
   )
 
 plot_WFE
-
-
